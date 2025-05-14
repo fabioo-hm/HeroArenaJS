@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="hero_card.js" defer></script>
+  <script src="hero-card2.js" defer></script>
   <script src="main.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/logo1.png">
@@ -135,14 +136,97 @@
   </div>
   </div>
   <div id="dc-page" class="page hidden">
-    <h1>DC</h1>
-    <hero-card class="card"
-    imagen="img/batman.png"
-    nombre="L"
-    alias="Loki"
-    descripcion="Dios del engaño y maestro de las mentiras, su astucia es tan afilada como su ambición. Con un corazón tan impredecible como su magia, juega al borde de la traición y la lealtad, siempre en busca de su propio destino, siempre desafiando a los dioses. En su caos hay un orden oculto, y en su risa, un reino por conquistar. Loki es el que nunca se detiene, ni siquiera cuando el universo mismo se enfrenta a su voluntad."
-    trajes= " Trajes: Traje clásico, Traje de The Avengers, Loki Rey."
-  ></hero-card>
+    <section id="dc" class="section">
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="img/vecteezy_space-galaxy-and-nebula_11128600.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
+       <header class="marvel-header2">
+         <img src="img/dc.png" alt="Marvel Logo" class="logo-marvel2">
+       </header>
+   
+       <section class="search-section2">
+         <input type="text" placeholder="Busca tu héroe..." class="search-bar2">
+       </section>
+       <section class="card-container2">
+         <hero-card2 class="card2"
+           imagen="img/batman.png"
+           alias="Batman"
+           nombre="Bruce Wayne."
+           descripcion="Desde las sombras de la ciudad alza vuelo un guardián sin poderes, pero con una voluntad inquebrantable. Su mente es su arma más afilada, su cuerpo, un instrumento de justicia entrenado al límite humano. Alimentado por la tragedia y guiado por un código férreo, enfrenta al crimen con astucia, temor y determinación, convirtiéndose en el mito que hace temblar a los que habitan la oscuridad."
+           trajes= " Trajes: Clásico, Dark Knight, Batsuit"
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/wonder.png"
+           alias="Mujer Maravilla"
+           nombre="Diana Prince"
+           descripcion="Una guerrera nacida del poder y la sabiduría de los dioses, forjada en el fuego del combate y guiada por un corazón indomable. Porta el lazo de la verdad, unos brazaletes capaces de desviar cualquier ataque, y una voluntad más fuerte que el acero. En cada batalla defiende la justicia, la paz y la dignidad de los inocentes, enfrentando a la oscuridad con la luz inquebrantable del valor.
+           "
+           trajes= " Trajes: Traje clásico, Armadura Dorada, Moderno."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/robin.png"
+           alias="Robin"
+           nombre="Dick Grayson"
+           descripcion="Forjado bajo la sombra del murciélago, pero con luz propia en su alma, es el acróbata del deber y el joven guerrero del equilibrio. Ágil, audaz y brillante, combina destreza y corazón en cada salto hacia la justicia. Con valentía desafía al peligro, demostrando que no se necesita oscuridad para combatir el mal, solo coraje, lealtad y un espíritu que nunca se rinde."
+           trajes= " Trajes: Traje clásico, Traje de Tim Drake, Traje de Damian Wayne."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/shazam.png"
+           alias="Shazam"
+           nombre="Billy Batson"
+           descripcion="Con una palabra ancestral, el rayo desciende y un alma pura se transforma en un campeón de los dioses. En su interior, la inocencia de un niño; en su exterior, la fuerza de titanes. Vuela con poder divino, lanza truenos con justicia y enfrenta el mal con una sonrisa desafiante. Es la prueba viviente de que la grandeza puede nacer del corazón más humilde."
+           trajes= " Trajes: Traje clásico, Traje de los nuevos 52, Traje del DCEU."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/super-man.png.jpg"
+           nombre="Clark Kent"
+           alias="Super Man"
+           descripcion="Un ser venido de las estrellas, dotado de fuerza colosal, visión imparable y el don de volar más allá de los cielos. Su espíritu es tan noble como su poder es inmenso, y cada gesto suyo es un acto de esperanza. Enfrenta la injusticia con la templanza de un guardián celestial, siendo faro de bondad en un mundo que a menudo olvida lo que significa ser verdaderamente humano."
+           trajes= " Trajes: Traje clásico, Man of Steel, Traje negro."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/green arrow.png"
+           nombre="Oliver Jonas Queen"
+           alias="Green Arrow"
+           descripcion="Desde las alturas de la ciudad, un arquero letal apunta con precisión imposible, guiado por justicia y fuego interior. No necesita poderes, solo su arco, sus flechas y una determinación templada en la adversidad. Rico en recursos pero rebelde de espíritu, combate la corrupción con astucia, ironía y puntería infalible, siendo el cazador urbano que nunca falla su objetivo."
+           trajes= " Trajes: Clásico, Traje de Arrow, Traje de los nuevos 52"
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/starfire.png"
+           nombre="Koriand'r"
+           alias="Starfire"
+           descripcion="Una princesa exiliada de las estrellas, bañada en fuego solar y movida por un corazón ardiente de compasión. Surca los cielos envuelta en energía pura, desatando rayos incandescentes contra quienes amenacen la libertad. Fuerte, valiente y luminosa, su espíritu fusiona ternura y furia, recordando que incluso en la guerra más oscura, el amor puede ser una fuerza imparable."
+           trajes= " Trajes: Clásico, Traje de los nuevos 52, Traje de los Teen Titans."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/linterna.png"
+           nombre="Hal Jordan"
+           alias="Linterna Verde"
+           descripcion="Portador de un anillo forjado por voluntad pura, es el guardián de sectores estelares y defensor de la esperanza frente al miedo. Con su imaginación como arma y su coraje como motor, crea luz en los rincones más oscuros del universo. Elegido entre miles por su fuerza interior, enfrenta lo imposible con el poder de una promesa: jamás retrocederá ante la oscuridad."
+           trajes= " Trajes: Traje clásico, Traje de los nuevos 52, Green Lantern."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/ivy.png"
+           nombre="Pamela Isley"
+           alias="Poison Ivy"
+           descripcion="Nacida del vínculo sagrado entre la tierra y la ciencia corrompida, es la flor venenosa que florece en venganza. Su belleza oculta un poder ancestral, capaz de doblegar voluntades y desatar la furia de la naturaleza. Defensora implacable del mundo verde, castiga sin piedad a quienes lo destruyen, siendo raíz, espina y tormenta en un solo ser."
+           trajes= " Trajes: Traje clásico, Traje moderno, Traje the Animated."
+         ></hero-card2>
+         <hero-card2 class="card2"
+           imagen="img/flash.png"
+           nombre="Barry Allen"
+           alias="Flash"
+           descripcion="El relámpago hecho carne, corre entre segundos como si fueran siglos, desafiando las leyes del tiempo y el espacio. Su mente es tan veloz como sus pasos, y su alma arde con el deseo de hacer el bien en un mundo que siempre llega tarde. Cuando todo parece perdido, es él quien llega primero, dejando tras de sí un destello de esperanza imposible de alcanzar."
+           trajes= " Trajes: Traje clásico, Traje de los Nuevos 52, Traje del DCEU."
+         ></hero-card2>
+       </section>
+     </div>    
+     </section>
+     </div>
+     </div>
   </div>
   <div id="arena-page" class="page hidden">
     <h1>Arena</h1>

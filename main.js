@@ -32,7 +32,7 @@ function changeArena() {
     arena.classList.remove('hidden');
     removeActiveClass();
 }
-const input = document.querySelector('input');
+const input = document.querySelector('.search-bar');
     input.addEventListener('input', () => {
     const searchTerm = input.value.toLowerCase();
 
@@ -44,4 +44,18 @@ const input = document.querySelector('input');
         card.style.display = visible ? 'block' : 'none';
     });
 });
+
+const input2 = document.querySelector('.search-bar2');
+    input2.addEventListener('input', () => {
+    const searchTerm = input2.value.toLowerCase();
+
+    const cards = document.querySelectorAll('hero-card2');
+
+    cards.forEach(card => {
+        const alias = card.getAttribute('alias').toLowerCase();
+        const visible = alias.includes(searchTerm);
+        card.style.display = visible ? 'block' : 'none';
+    });
+});
+
 

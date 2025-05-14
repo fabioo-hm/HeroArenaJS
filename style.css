@@ -281,3 +281,54 @@ position: relative;
 .hidden {
 display: none;
 }
+.marvel-header2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 4rem;
+  }
+  
+  .logo-marvel2 {
+  width: 350px;
+  max-width: 100%;
+  }
+  .search-section2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 3rem;
+  }
+  
+  .search-bar2 {
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #5e5e5ebe;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 0 10px #5e5e5ebe;
+  outline: none;
+  transition: 0.3s;
+  }
+  
+  .search-bar2::placeholder {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  }
+  
+  .search-bar2:focus {
+  background-color: #164396;
+  box-shadow: 0 0 15px #4caeff;
+  }
+  .card-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem;
+  z-index: 2;
+  position: relative;
+  }
