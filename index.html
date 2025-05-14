@@ -4,45 +4,153 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="hero_card.js" defer></script>
+  <script src="main.js" defer></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo2.png">
+  <link rel="icon" href="img/logo1.png">
   <title>HERO ARENA</title>
 </head>
 <body>
-  <!-- NAV -->
   <nav class="navbar">
     <div class="logo">
       <img src="img/logo2.png" alt="logo">
     </div>
     <div class="menu">
       <div class="otrosbotones">
-        <a href="index.html" class="active">HOME</a>
-        <a href="marvel.html">MARVEL COMICS</a>
-        <a href="dc.html">DC COMICS</a>
+        <a href="index.html"  class="btn active">HOME</a>
+        <a href="#" class="btn" id="marvel-button" onclick="changeMarvel()">MARVEL COMICS</a>
+        <a href="#" id="dc-button" class="btn" onclick="changeDC()">DC COMICS</a>
       </div>
-      <a href="#" class="arena-btn">ARENA</a>
+      <a href="#" id="arena-button" class="arena-btn btn" onclick="changeArena()">ARENA</a>
     </div>
   </nav>
+  <div id="home-page" class="page">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="img/vecteezy_space-galaxy-and-nebula_11128600.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+    <section class="hero">
+      <img src="img/logo6.png" alt="Hero Arena Logo" class="hero-logo">
+      <p>
+        <strong>HERO ARENA</strong> es una experiencia épica de combate entre superhéroes donde los universos de <strong>Marvel</strong> y <strong>DC</strong> colisionan. Aquí no hay equipos, solo tú, tu héroe favorito, y el enemigo. Cada batalla es un duelo individual lleno de tensión, estrategia y poder. ¿Tienes lo que se necesita para ganar en la arena? 
+      </p>
 
-  <!-- VIDEO BACKGROUND -->
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="img/vecteezy_space-galaxy-and-nebula_11128600.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+      <p>
+        ¡Explora las secciones de <strong>Marvel</strong> y <strong>DC</strong>, elige tu campeón y entra al combate!
+      </p>
+      <h1>¡Lucha Como un Héroe!</h1>
+      <button>¡A LA ARENA!</button>
+    </section>
   </div>
+  <div id="marvel-page" class="page hidden">
+    <section id="marvel" class="section">
+   <div class="background-overlay">
+    <header class="marvel-header">
+      <img src="img/Marvel.webp" alt="Marvel Logo" class="logo-marvel">
+    </header>
 
-  <!-- HERO HOME -->
-  <section class="hero">
-    <img src="img/logo6.png" alt="Hero Arena Logo" class="hero-logo">
-    <p>
-      <strong>HERO ARENA</strong> es una experiencia épica de combate entre superhéroes donde los universos de <strong>Marvel</strong> y <strong>DC</strong> colisionan. Aquí no hay equipos, solo tú, tu héroe favorito, y el enemigo. Cada batalla es un duelo individual lleno de tensión, estrategia y poder. ¿Tienes lo que se necesita para ganar en la arena? 
-    </p>
-
-    <p>
-      ¡Explora las secciones de <strong>Marvel</strong> y <strong>DC</strong>, elige tu campeón y entra al combate!
-    </p>
-    <h1>¡Lucha Como un Héroe!</h1>
-    <button>¡A LA ARENA!</button>
+    <section class="search-section">
+      <input type="text" placeholder="Busca tu héroe..." class="search-bar">
+    </section>
+    <section class="card-container">
+      <hero-card class="card"
+        imagen="img/iron-man.png"
+        alias="Iron Man"
+        nombre="Tony Starck"
+        descripcion="Un genio encerrado en una armadura de titanio y voluntad, convertido en leyenda por su ingenio, no por sus dones. Cada circuito en su traje late con redención, cada vuelo es una declaración de que el futuro pertenece a quienes lo construyen. Sarcástico, brillante e imparable, enfrenta dioses y monstruos armado solo con su mente… y un corazón que nunca se rinde."
+        trajes= " Trajes: Mark I, Mark II, Mark L."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/thor.png"
+        alias="Thor"
+        nombre="Thor Odison"
+        descripcion="Dios del trueno y heredero del trueno eterno, empuña un martillo que solo los dignos pueden alzar y desata tormentas con un solo gesto. Nacido en la gloria de los reinos celestiales pero forjado en la lucha por los mortales, es fuerza desatada y honor encarnado. Cuando ruge el cielo y la batalla llama, su poder cae como un rayo… y la victoria retumba con su nombre."
+        trajes= " Trajes: Traje clásico, Ragnarok, Endgame."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/spider-man.jpg"
+        alias="Spider-Man"
+        nombre="Peter Parker"
+        descripcion="Marcado por una mordida y guiado por una promesa, se desliza entre rascacielos como un fantasma ágil del deber. Cada salto es un riesgo, cada telaraña un acto de fe, pero nunca duda cuando la responsabilidad llama. Tras la máscara hay dolor, humor y humanidad, pero también el corazón de un héroe que siempre se levanta… porque alguien, en algún lugar, lo necesita."
+        trajes= " Trajes: Traje clásico, Homecoming, Into the Spider-Verse."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/cap-america.png"
+        alias="Capitan America"
+        nombre="Steve Rogers"
+        descripcion="Nacido en tiempos de guerra pero hecho símbolo eterno, es el escudo viviente de los ideales que nunca deben caer. Su fuerza va más allá del músculo: está en su valor, su lealtad y su inquebrantable sentido del bien. En el campo de batalla, es la primera línea y la última esperanza, marchando siempre adelante, sin rendirse jamás, al ritmo firme de la justicia."
+        trajes= " Trajes: Traje clásico, The Winter Soldier, Endgame."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/wanda.png"
+        nombre="Wanda Maximoff"
+        alias="Bruja Escarlata"
+        descripcion="Tejedora del caos y portadora de un poder que desafía la realidad misma, su voluntad puede alterar mundos y su dolor, desatar tormentas arcanas. Bruja, guerrera y madre del imposible, camina entre lo místico y lo humano, marcada por tragedias que solo la han hecho más temible. Cuando alza sus manos, la magia tiembla… porque incluso el destino se doblega ante su furia."
+        trajes= " Trajes: Traje clásico, Traje de Avengers, Traje de WandaVision."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/hulk.png"
+        nombre="Bruce Banner"
+        alias="Hulk"
+        descripcion="Dentro de un hombre vive una fuerza primitiva, desatada por la ira y temida por los dioses. Es tormenta y terremoto, furia encarnada que arrasa todo a su paso, pero en su centro late un alma herida que solo quiere paz. Cuando la bestia despierta, no hay muro, ejército ni mundo que pueda detenerlo… solo el eco de un grito que anuncia el fin."
+        trajes= " Trajes: Hulk Clásico, Traje de The Avengers, Planet Hulk."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/deadpool2.png"
+        nombre="Wade Winston"
+        alias="Deadpool"
+        descripcion="Bufón inmortal, mercenario sin amo, y sombra roja entre balas y blasfemias, sufre el dolor con carcajadas y combate la muerte con sarcasmo. Su traje es cicatriz, su espada es sentencia, y su alma... un caos que nunca duerme. En un mundo que intenta olvidarlo, él se asegura de ser inolvidable. Porque donde otros caen, él se levanta insultando. Letal, burlón, eterno: Deadpool no es un héroe, es un mal necesario con sentido del humor fatal."
+        trajes= " Trajes: Clásico, X-Force, Ultimate."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/wolverin.png"
+        nombre="James Howlett"
+        alias="Wolverine"
+        descripcion="Un guerrero eterno marcado por el dolor, su cuerpo indestructible es solo un reflejo de su voluntad inquebrantable. Con garras de adamantium y una furia contenida en cada uno de sus movimientos, lucha con la rabia de un hombre que ha perdido todo, pero nunca su humanidad. En la sombra o en el campo de batalla, Wolverine es el cuchillo afilado de la justicia."
+        trajes= " Trajes: Traje clásico, Traje de X-Men, Traje de Logan."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/doctor-strange.png"
+        nombre="Stephen Strange"
+        alias="Doctor Strange"
+        descripcion="Hechicero supremo, guardián de los secretos del multiverso y maestro de las artes arcanas, su mente navega entre dimensiones y su voluntad es la llave que desbloquea lo imposible. Con un solo movimiento, puede doblar la realidad y desafiar el tiempo, pero siempre lo hace con una cautela que refleja el peso de su sabiduría. Enfrentando oscuridades que ni los dioses comprenden."
+        trajes= " Trajes: Traje clásico, Traje de Doctor Strange, Traje de Avengers."
+      ></hero-card>
+      <hero-card class="card"
+        imagen="img/loki.png"
+        nombre="Loki Laufeyson"
+        alias="Loki"
+        descripcion="Dios del engaño y maestro de las mentiras, su astucia es tan afilada como su ambición. Con un corazón tan impredecible como su magia, juega al borde de la traición y la lealtad, siempre en busca de su propio destino, siempre desafiando a los dioses. En su caos hay un orden oculto, y en su risa, un reino por conquistar. Loki es el que nunca se detiene, ni siquiera cuando el universo mismo se enfrenta a su voluntad."
+        trajes= " Trajes: Traje clásico, Traje de The Avengers, Loki Rey."
+      ></hero-card>
+    </section>
+  </div>    
   </section>
+  </div>
+  </div>
+  <div id="dc-page" class="page hidden">
+    <h1>DC</h1>
+  </div>
+  <div id="arena-page" class="page hidden">
+    <h1>Arena</h1>
+  </div>
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const cards = document.querySelectorAll(".card");
+
+          cards.forEach(card => {
+          const infoBtn = card.querySelector(".info-btn");
+          const closeBtn = card.querySelector(".close-btn");
+
+          infoBtn.addEventListener("click", () => {
+              card.classList.add("flipped");
+          });
+
+          closeBtn.addEventListener("click", () => {
+              card.classList.remove("flipped");
+          });
+          });
+      });
+  </script>
 </body>
