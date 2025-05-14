@@ -180,7 +180,7 @@ class HeroCard extends HTMLElement {
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 3px solid white;
+        border: 2px solid white;
         border-radius: 15px;
         overflow: hidden;
         background-color: rgba(2, 2, 2, 0.692);
@@ -198,6 +198,7 @@ class HeroCard extends HTMLElement {
         width: 100%;
         height: 70%;
         object-fit: cover;
+        object-position: top;
         }
 
         .alias {
