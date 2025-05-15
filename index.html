@@ -229,8 +229,69 @@
      </div>
   </div>
   <div id="arena-page" class="page hidden">
-    <h1>Arena</h1>
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="img/vecteezy_space-galaxy-and-nebula_11128600.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+    <div>
+      <header class="marvel-header2">
+        <img src="img/arena.webp" alt="Marvel Logo" id="logo-arena" class="logo-marvel2">
+      </header>
+      <section class="game-modes">
+  <div class="game-mode">
+      <div class="game-button">
+        <div class="img-row">
+          <div>
+            <img id="player-img" src="img/PlayerIMG.png" alt="Player">
+            <center><span>PLAYER</span></center>
+          </div>
+          <img src="img/vs.webp">
+          <div>
+            <img id="player-img" src="img/PlayerFIMG.webp" alt="Player">
+            <center><span>PLAYER</span></center>
+        </div>
+        </div>
+    </div>
+
+    <div class="game-button">
+      <div class="img-row">
+        <div>
+          <img id="player-img" src="img/PlayerIMG.png" alt="Player">
+          <center><span>PLAYER</span></center>
+        </div>
+        <img src="img/vs.webp">
+        <div>
+          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+          <center><span>COMPUTER</span></center>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <center>
+    <div class="game-button">
+      <div class="img-row">
+        <div>
+          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+          <center><span>COMPUTER</span></center>
+        </div>
+        <img src="img/vs.webp">
+        <div>
+          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+          <center><span>COMPUTER</span></center>
+        </div>
+      </div>
+    </div>
+  </center>
+</section>
+  </div>
+  <section id="hero-selection" class="hero-container"></section>
+  <div id="selected-hero" class="selected-hero"></div>
+  <button onclick="fetchHeroes()">Mostrar Héroes</button>
+  <button onclick="selectRandomHero()">Héroe Aleatorio</button>
+
   <script>
       document.addEventListener("DOMContentLoaded", () => {
           const cards = document.querySelectorAll(".card");

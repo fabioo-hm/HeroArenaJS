@@ -1,0 +1,114 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "nombre": "Tony Stark",
+      "alias": "Iron Man",
+      "imagen": "img/iron-man.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Rocket Punch",
+        "ataque-2": "Repulsor Blast"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Thor",
+      "alias": "Thor",
+      "imagen": "img/thor.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Mjolnir Strike",
+        "ataque-2": "Thunder Clap"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Peter Parker",
+      "alias": "Spider-Man",
+      "imagen": "img/spider-man.jpg",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Web Shot",
+        "ataque-2": "Spider Kick"
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Steve Rogers",
+      "alias": "Capitán América",
+      "imagen": "img/cap-america.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Shield Throw",
+        "ataque-2": "Super Soldier Punch"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Wanda Maximoff",
+      "alias": "La Bruja Escarlata",
+      "imagen": "img/wanda.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Hex Bolt",
+        "ataque-2": "Reality Warp"
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Bruce Wayne",
+      "alias": "Batman",
+      "imagen": "img/batman.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Batarang Throw",
+        "ataque-2": "Stealth Attack"
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "Clark Kent",
+      "alias": "Superman",
+      "imagen": "img/super-man.png.jpg",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Heat Vision",
+        "ataque-2": "Super Punch"
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Diana Prince",
+      "alias": "La Mujer Maravilla",
+      "imagen": "img/wonder.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Lazo de la Verdad",
+        "ataque-2": "Super Golpe"
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Dick Grayson",
+      "alias": "Robin",
+      "imagen": "img/robin.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Acróbata Ágil",
+        "ataque-2": "Bastón de Combate"
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "Hal Jordan",
+      "alias": "Linterna Verde",
+      "imagen": "img/linterna.png",
+      "vida": 100,
+      "habilidades": {
+        "ataque-1": "Anillo de Energía",
+        "ataque-2": "Escudo de Luz"
+      }
+    }
+  ]
+}

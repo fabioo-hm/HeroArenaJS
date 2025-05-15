@@ -332,3 +332,195 @@ display: none;
   z-index: 2;
   position: relative;
   }
+
+#game-mode-title {
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.game-mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.game-button {
+  background: #00000088;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  width: fit-content;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s;
+  font-family: 'Bangers', cursive;
+}
+
+.game-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgb(255, 255, 255), 0 0 15px #fff inset;
+}
+
+.img-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-row img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px white);
+}
+
+#computer-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px white);
+}
+
+.vs-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 10px;
+  color: rgb(255, 13, 0);
+  text-shadow: 2px 2px 4px #000;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#logo-arena {
+  width: 30vw;
+}
+
+.hero-card {
+  background: #222;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  color: white;
+}
+
+.hero-card img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.selected-hero {
+  margin-top: 20px;
+  padding: 20px;
+  background: #333;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Battle Arena Styles */
+.battle-arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.hero-battle-container {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 300px;
+}
+
+.vs-container {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    text-shadow: 0 0 5px black;
+    margin: 0 2rem;
+}
+
+.battle-log {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.hero-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.hero-card {
+    background: #222;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hero-card:hover {
+    transform: scale(1.05);
+}
+
+.hero-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.abilities {
+    margin-top: 1rem;
+}
+
+.abilities button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.abilities button:hover {
+    background-color: #45a049;
+}
+
+.abilities button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.selected-hero-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
