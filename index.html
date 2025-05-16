@@ -41,7 +41,7 @@
         ¡Explora las secciones de <strong>Marvel</strong> y <strong>DC</strong>, elige tu campeón y entra al combate!
       </p>
       <h1>¡Lucha Como un Héroe!</h1>
-      <button>¡A LA ARENA!</button>
+      <button onclick="changeArena()">¡A LA ARENA!</button>
     </section>
   </div>
   <div id="marvel-page" class="page hidden">
@@ -239,8 +239,22 @@
       <header class="marvel-header2">
         <img src="img/arena.webp" alt="Marvel Logo" id="logo-arena" class="logo-marvel2">
       </header>
-      <section class="game-modes">
-  <div class="game-mode">
+    <section class="game-modes">
+    <div class="game-mode">
+      <div class="game-button" onclick="startBattle('player-vs-player')">
+        <div class="img-row">
+            <div>
+                <img src="img/PlayerIMG.png" alt="Player 1">
+                <center><span>PLAYER 1</span></center>
+            </div>
+            <img src="img/vs.webp" class="vs-icon">
+            <div>
+                <img src="img/PlayerFIMG.webp" alt="Player 2">
+                <center><span>PLAYER 2</span></center>
+            </div>
+        </div>
+    </div>
+
       <div class="game-button">
         <div class="img-row">
           <div>
@@ -249,49 +263,36 @@
           </div>
           <img src="img/vs.webp">
           <div>
-            <img id="player-img" src="img/PlayerFIMG.webp" alt="Player">
-            <center><span>PLAYER</span></center>
-        </div>
-        </div>
-    </div>
-
-    <div class="game-button">
-      <div class="img-row">
-        <div>
-          <img id="player-img" src="img/PlayerIMG.png" alt="Player">
-          <center><span>PLAYER</span></center>
-        </div>
-        <img src="img/vs.webp">
-        <div>
-          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
-          <center><span>COMPUTER</span></center>
+            <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+            <center><span>COMPUTER</span></center>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <center>
-    <div class="game-button">
-      <div class="img-row">
-        <div>
-          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
-          <center><span>COMPUTER</span></center>
+      <center>
+        <div class="game-button">
+          <div class="img-row">
+            <div>
+              <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+              <center><span>COMPUTER</span></center>
+            </div>
+            <img src="img/vs.webp">
+            <div>
+              <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
+              <center><span>COMPUTER</span></center>
+            </div>
+          </div>
         </div>
-        <img src="img/vs.webp">
-        <div>
-          <img id="computer-img" src="img/ComputerIMG.webp" alt="Player">
-          <center><span>COMPUTER</span></center>
-        </div>
-      </div>
+      </center>
+    </section>
+    <section id="hero-selection" class="hero-container">
+    </section>
+    <div id="selected-hero" class="selected-hero"></div>
+    <div class="attack-overlay" id="attack-overlay">
+      <img class="attack-gif" id="attack-gif" alt="Ataque">
     </div>
-  </center>
-</section>
   </div>
-  <section id="hero-selection" class="hero-container"></section>
-  <div id="selected-hero" class="selected-hero"></div>
-  <button onclick="fetchHeroes()">Mostrar Héroes</button>
-  <button onclick="selectRandomHero()">Héroe Aleatorio</button>
-
   <script>
       document.addEventListener("DOMContentLoaded", () => {
           const cards = document.querySelectorAll(".card");

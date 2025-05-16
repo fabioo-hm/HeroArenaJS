@@ -422,16 +422,6 @@ display: none;
   margin-bottom: 10px;
 }
 
-.selected-hero {
-  margin-top: 20px;
-  padding: 20px;
-  background: #333;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Battle Arena Styles */
 .battle-arena {
     display: flex;
     justify-content: space-around;
@@ -464,6 +454,7 @@ display: none;
     border-radius: 10px;
     max-height: 300px;
     overflow-y: auto;
+    text-align: center;
 }
 
 .hero-card-container {
@@ -474,15 +465,6 @@ display: none;
     margin-top: 1rem;
 }
 
-.hero-card {
-    background: #222;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
 
 .hero-card:hover {
     transform: scale(1.05);
@@ -521,6 +503,190 @@ display: none;
 .selected-hero-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem;
+    width: 500px;
     border-radius: 10px;
     margin-bottom: 1rem;
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+#player1-container {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: fit-content;
+  margin: 0 100px 0 400px;
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h3 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 5px;
+    }
+    .health-bar {
+      width: 90%;
+      height: 20px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+  .abilities {
+    display: flex;
+    justify-content: center;
+    button {
+      background: linear-gradient(135deg, #646464, #4b4b4b);
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #053a00, #147900);
+    }
+  }
+}
+
+#player2-container {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: fit-content;
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h3 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 5px;
+    }
+  .health-bar {
+      width: 90%;
+      height: 20px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+  .abilities {
+    display: flex;
+    justify-content: center;
+    button {
+        background: linear-gradient(135deg, #646464, #4b4b4b);
+        padding: 10px 20px;
+        font-size: 20px;
+      }
+      button:hover {
+        background: linear-gradient(135deg, #053a00, #147900);
+    }
+  }
+}
+
+.health-progress {
+  height: 100%;
+  background: #4CAF50;
+  transition: all 0.3s ease;
+}
+
+.health-low {
+  background: #ff0000 !important;
+}
+
+.attack-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.attack-gif {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+}
+.hero-card p {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.hero-card h3 {
+  font-size: 1.5rem;
+}
+.hero-card button {
+  background: linear-gradient(135deg, #e0a629, #ce7e07);
+  margin-top: 15px;
+  color: #1d1c1c;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.hero-card {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  border: 2px solid #333;
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 100%;
+}
+
+.player1-title{
+  text-align: center;
+  font-size: 40px;
+}
+
+.hero-cards-wrapper {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;  
+    align-items: flex-start;      
+    padding: 20px;
+    flex-wrap: wrap;
 }

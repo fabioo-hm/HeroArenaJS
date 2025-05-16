@@ -58,31 +58,34 @@ const input2 = document.querySelector('.search-bar2');
     });
 });
 
-async function fetchHeroes() {
-  try {
-    const response = await fetch('http://localhost:3000/heroes');
-    const heroes = await response.json();
-    displayHeroCards(heroes);
-  } catch (error) {
-    console.error("Error al obtener los héroes: ", error);
-  }
-}
 
-function displayHeroCards(heroes) {
-  const container = document.getElementById('hero-selection');
-  container.innerHTML = '';
-
-  heroes.forEach(hero => {
-    const card = document.createElement('div');
-    card.classList.add('hero-card');
-    card.innerHTML = `
-      <img src="${hero.imagen}" alt="${hero.alias}">
-      <h3>${hero.alias}</h3>
-      <p>${hero.nombre}</p>
-      <button onclick="selectHero(${hero.id})">Seleccionar</button>
-    `;
-    container.appendChild(card);
-  });
+function displayHeroCards(heroes, title = 'Select Hero') {
+    const container = document.getElementById('hero-selection');
+    container.innerHTML = `<h2 class="selection-title">${title}</h2>`;
+    
+    const cardContainer = document.createElement('div');
+    cardContainer.className = 'hero-card-container';
+    
+    heroes.forEach(hero => {
+        const card = document.createElement('div');
+        card.classList.add('hero-card');
+        const isDisabled = player1Hero && player1Hero.id === hero.id;
+        
+        card.innerHTML = `
+            <img src="${hero.imagen}" alt="${hero.alias}">
+            <h3>${hero.alias}</h3>
+            <p>${hero.nombre}</p>
+            <button 
+                onclick="selectHeroForBattle(${hero.id})" 
+                ${isDisabled ? 'disabled' : ''}
+            >
+                ${isDisabled ? 'Seleccionado' : 'Seleccionar'}
+            </button>
+        `;
+        cardContainer.appendChild(card);
+    });
+    
+    container.appendChild(cardContainer);
 }
 
 function selectHero(id) {
@@ -118,16 +121,16 @@ let currentGameMode = null;
 
 function startBattle(mode) {
     currentGameMode = mode;
+    player1Hero = null;
+    player2Hero = null;
     document.getElementById('hero-selection').innerHTML = '';
     document.getElementById('selected-hero').innerHTML = '';
-    
 
     if (mode === 'player-vs-player') {
-        fetchHeroes('Select Player 1 Hero');
+        fetchHeroes('<span class="player1-title">Héroe del JUGADOR 1</span>');
     } else if (mode === 'player-vs-computer') {
-        fetchHeroes('Select Your Hero');
+        fetchHeroes('Selecciona tu Héroe');
     } else if (mode === 'computer-vs-computer') {
-
         selectRandomHeroForBattle(1);
         selectRandomHeroForBattle(2);
     }
@@ -154,31 +157,8 @@ function selectRandomHeroForBattle(playerNumber) {
         });
 }
 
-function displaySelectedHero(hero, player) {
-    const container = document.createElement('div');
-    container.className = 'selected-hero-container';
-    container.id = `${player}-container`;
-    container.innerHTML = `
-        <h2>${player === 'player1' ? 'Player 1' : 'Player 2'}</h2>
-        <img src="${hero.imagen}" alt="${hero.alias}">
-        <h3>${hero.alias} (${hero.nombre})</h3>
-        <p><strong>Vida:</strong> <span id="${player}-health">${hero.vida}</span></p>
-        <div class="abilities">
-            <button onclick="useAbility('${player}', 'ataque-1')">${hero.habilidades["ataque-1"]}</button>
-            <button onclick="useAbility('${player}', 'ataque-2')">${hero.habilidades["ataque-2"]}</button>
-        </div>
-    `;
-    
-    document.getElementById('hero-selection').appendChild(container);
-}
-
 function setupBattle() {
     document.getElementById('hero-selection').innerHTML = `
-        <div class="battle-arena">
-            <div id="player1-container" class="hero-battle-container"></div>
-            <div class="vs-container">VS</div>
-            <div id="player2-container" class="hero-battle-container"></div>
-        </div>
         <div id="battle-log" class="battle-log"></div>
     `;
     
@@ -188,19 +168,39 @@ function setupBattle() {
     if (currentGameMode === 'computer-vs-computer') {
         startComputerBattle();
     } else if (currentGameMode === 'player-vs-computer') {
-
+        // Deshabilita los botones de la computadora
         document.querySelector('#player2-container .abilities').style.display = 'none';
+    } else if (currentGameMode === 'player-vs-player') {
+        // Inicia con el jugador 1 primero
+        document.querySelectorAll('#player2-container .abilities button').forEach(btn => {
+            btn.disabled = true;
+        });
     }
 }
 
 function useAbility(player, ability) {
-    if (player === 'player1' && currentGameMode === 'player-vs-player') {
-
+    if (player === 'player1') {
         performAttack(player1Hero, player2Hero, ability, 'player1', 'player2');
-    } else if (player === 'player1' && currentGameMode === 'player-vs-computer') {
-
-        performAttack(player1Hero, player2Hero, ability, 'player1', 'player2');
-
+        if (currentGameMode === 'player-vs-player' && player2Hero.vida > 0) {
+            document.querySelectorAll('#player2-container .abilities button').forEach(btn => {
+                btn.disabled = false;
+            });
+            document.querySelectorAll('#player1-container .abilities button').forEach(btn => {
+                btn.disabled = true;
+            });
+        }
+    } else if (player === 'player2') {
+        performAttack(player2Hero, player1Hero, ability, 'player2', 'player1');
+        if (currentGameMode === 'player-vs-player' && player1Hero.vida > 0) {
+            document.querySelectorAll('#player1-container .abilities button').forEach(btn => {
+                btn.disabled = false;
+            });
+            document.querySelectorAll('#player2-container .abilities button').forEach(btn => {
+                btn.disabled = true;
+            });
+        }
+    }
+    if (currentGameMode === 'player-vs-computer' && player === 'player1' && player2Hero.vida > 0) {
         setTimeout(computerTurn, 1500);
     }
 }
@@ -261,10 +261,15 @@ function startComputerBattle() {
     }, 3000);
 }
 
-async function fetchHeroes(title = 'Select Hero') {
+async function fetchHeroes(title = 'Select Hero', excludeId = null) {
     try {
         const response = await fetch('http://localhost:3000/heroes');
-        const heroes = await response.json();
+        let heroes = await response.json();
+
+        if (excludeId) {
+            heroes = heroes.filter(hero => hero.id !== excludeId);
+        }
+        
         displayHeroCards(heroes, title);
     } catch (error) {
         console.error("Error al obtener los héroes: ", error);
@@ -273,7 +278,7 @@ async function fetchHeroes(title = 'Select Hero') {
 
 function displayHeroCards(heroes, title = 'Select Hero') {
     const container = document.getElementById('hero-selection');
-    container.innerHTML = `<h2>${title}</h2>`;
+    container.innerHTML = `<h2 class="selection-title">${title}</h2>`;
     
     const cardContainer = document.createElement('div');
     cardContainer.className = 'hero-card-container';
@@ -285,7 +290,7 @@ function displayHeroCards(heroes, title = 'Select Hero') {
             <img src="${hero.imagen}" alt="${hero.alias}">
             <h3>${hero.alias}</h3>
             <p>${hero.nombre}</p>
-            <button onclick="selectHeroForBattle(${hero.id})">Select</button>
+            <button onclick="selectHeroForBattle(${hero.id})">Seleccionar</button>
         `;
         cardContainer.appendChild(card);
     });
@@ -302,7 +307,9 @@ function selectHeroForBattle(id) {
                 displaySelectedHero(hero, 'player1');
                 
                 if (currentGameMode === 'player-vs-player') {
-                    fetchHeroes('Select Player 2 Hero');
+                    setTimeout(() => {
+                        fetchHeroes('<span class="player1-title">Héroe del JUGADOR 2</span>', player1Hero.id);
+                    }, 100);
                 } else if (currentGameMode === 'player-vs-computer') {
                     selectRandomHeroForBattle(2);
                 }
@@ -328,3 +335,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function showAttackGif(gifPath) {
+    const overlay = document.getElementById('attack-overlay');
+    const gif = document.getElementById('attack-gif');
+    gif.src = gifPath;
+    overlay.style.display = 'flex';
+    setTimeout(() => overlay.style.display = 'none', 1000);
+}
+
+function displaySelectedHero(hero, player) {
+    const container = document.createElement('div');
+    container.className = 'selected-hero-container';
+    container.id = `${player}-container`;
+    
+    const showAbilities = (player === 'player1') || 
+                         (currentGameMode === 'player-vs-player') ||
+                         (currentGameMode === 'computer-vs-computer');
+    
+    container.innerHTML = `
+        <h2>${player === 'player1' ? 'Jugador 1' : 'Jugador 2'}</h2>
+        <img src="${hero.imagen}" alt="${hero.alias}">
+        <h3>${hero.alias}</h3>
+        <div class="health-bar">
+            <div class="health-progress" id="${player}-health" style="width: ${hero.vida}%"></div>
+        </div>
+        ${showAbilities ? `
+        <div class="abilities">
+            <button onclick="useAbility('${player}', 'ataque-1')">${hero.habilidades["ataque-1"]}</button>
+            <button onclick="useAbility('${player}', 'ataque-2')">${hero.habilidades["ataque-2"]}</button>
+        </div>` : ''}
+    `;
+    document.getElementById('hero-selection').appendChild(container);
+}
+
+function performAttack(attacker, defender, ability, attackerId, defenderId) {
+
+    showAttackGif(attacker.gifs[ability]);
+    
+    const damage = calculateDamage(ability);
+    defender.vida = Math.max(0, defender.vida - damage);
+
+    const healthBar = document.getElementById(`${defenderId}-health`);
+    healthBar.style.width = `${defender.vida}%`;
+    healthBar.classList.toggle('health-low', defender.vida <= 30);
+
+    const battleLog = document.getElementById('battle-log');
+    const logEntry = document.createElement('p');
+    logEntry.textContent = `${attacker.alias} usa ${attacker.habilidades[ability]} (${damage} daño)`;
+    battleLog.appendChild(logEntry);
+    
+    if (defender.vida <= 0) {
+        const winnerLog = document.createElement('h3');
+        winnerLog.textContent = `¡${attacker.alias} gana!`;
+        battleLog.appendChild(winnerLog);
+        
+        document.querySelectorAll('.abilities button').forEach(btn => btn.disabled = true);
+    }
+}

@@ -281,7 +281,6 @@ class HeroCard2 extends HTMLElement {
     connectedCallback() {
     const shadow = this.shadowRoot;
 
-    // Obtener elementos
     const img = shadow.getElementById('imagen');
     const aliasFront = shadow.querySelector('.alias');
     const nombreBack = shadow.querySelector('.nombre');
@@ -289,7 +288,6 @@ class HeroCard2 extends HTMLElement {
     const descripcion = shadow.querySelector('.descripcion');
     const trajes = shadow.querySelector('.trajes');
 
-    // Asignar atributos del componente
     img.src = this.getAttribute('imagen') || '';
     aliasFront.textContent = this.getAttribute('alias') || '';
     nombreBack.textContent = this.getAttribute('nombre') || '';
@@ -297,7 +295,6 @@ class HeroCard2 extends HTMLElement {
     descripcion.textContent = this.getAttribute('descripcion') || '';
     trajes.textContent = this.getAttribute('trajes') || '';
 
-    // Manejo del volteo de tarjeta
     const card = shadow.querySelector('.card');
     const infoBtn = shadow.querySelector('.info-btn');
     const closeBtn = shadow.querySelector('.close-btn');

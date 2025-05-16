@@ -9,6 +9,10 @@
       "habilidades": {
         "ataque-1": "Rocket Punch",
         "ataque-2": "Repulsor Blast"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/ironman_attack1.gif",
+        "ataque-2": "img/gifs/ironman_attack2.gif"
       }
     },
     {
@@ -20,6 +24,10 @@
       "habilidades": {
         "ataque-1": "Mjolnir Strike",
         "ataque-2": "Thunder Clap"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/thor_attack1.gif",
+        "ataque-2": "img/gifs/thor_attack2.gif"
       }
     },
     {
@@ -31,6 +39,10 @@
       "habilidades": {
         "ataque-1": "Web Shot",
         "ataque-2": "Spider Kick"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/spider_attack1.gif",
+        "ataque-2": "img/gifs/spider_attack2.gif"
       }
     },
     {
@@ -42,6 +54,10 @@
       "habilidades": {
         "ataque-1": "Shield Throw",
         "ataque-2": "Super Soldier Punch"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/capitan_attack1.gif",
+        "ataque-2": "img/gifs/capitan_attack2.gif"
       }
     },
     {
@@ -53,6 +69,10 @@
       "habilidades": {
         "ataque-1": "Hex Bolt",
         "ataque-2": "Reality Warp"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/wanda_attack1.gif",
+        "ataque-2": "img/gifs/wanda_attack2.gif"
       }
     },
     {
@@ -64,6 +84,10 @@
       "habilidades": {
         "ataque-1": "Batarang Throw",
         "ataque-2": "Stealth Attack"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/batman_attack1.gif",
+        "ataque-2": "img/gifs/batman_attack2.gif"
       }
     },
     {
@@ -75,6 +99,10 @@
       "habilidades": {
         "ataque-1": "Heat Vision",
         "ataque-2": "Super Punch"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/super_attack1.gif",
+        "ataque-2": "img/gifs/super_attack2.gif"
       }
     },
     {
@@ -86,6 +114,10 @@
       "habilidades": {
         "ataque-1": "Lazo de la Verdad",
         "ataque-2": "Super Golpe"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/wonder_attack1.gif",
+        "ataque-2": "img/gifs/wonder_attack2.gif"
       }
     },
     {
@@ -97,6 +129,10 @@
       "habilidades": {
         "ataque-1": "Acróbata Ágil",
         "ataque-2": "Bastón de Combate"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/robin_attack1.gif",
+        "ataque-2": "img/gifs/robin_attack2.gif"
       }
     },
     {
@@ -108,6 +144,10 @@
       "habilidades": {
         "ataque-1": "Anillo de Energía",
         "ataque-2": "Escudo de Luz"
+      },
+      "gifs": {
+        "ataque-1": "img/gifs/linterna_attack1.gif",
+        "ataque-2": "img/gifs/linterna_attack2.gif"
       }
     }
   ]
