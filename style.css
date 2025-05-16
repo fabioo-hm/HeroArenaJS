@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Cal+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 * {
 margin: 0;
@@ -358,7 +359,9 @@ display: none;
   width: fit-content;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.3s;
-  font-family: 'Bangers', cursive;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .game-button:hover {
@@ -972,7 +975,6 @@ display: none;
     max-width: 300px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s;
-    font-family: 'Bangers', cursive;
   }
 
   .game-button:hover {

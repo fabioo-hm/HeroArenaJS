@@ -204,7 +204,7 @@ class HeroCard extends HTMLElement {
         .alias {
         margin-top: 0.5rem;
         font-family: "Roboto", sans-serif;
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         color: white;
         }
         .info-btn, -close-btn {
@@ -235,6 +235,7 @@ class HeroCard extends HTMLElement {
         transform: rotateY(180deg);
         text-align: center;
         font-size: 0.9rem;
+        background-color: black;
         }
     
         .nombre{
