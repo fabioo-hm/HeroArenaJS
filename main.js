@@ -125,6 +125,7 @@ function startBattle(mode) {
     player2Hero = null;
     document.getElementById('hero-selection').innerHTML = '';
     document.getElementById('selected-hero').innerHTML = '';
+    document.querySelector('.game-modes').classList.add('hidden');
 
     if (mode === 'player-vs-player') {
         fetchHeroes('<span class="player1-title">Héroe del JUGADOR 1</span>');
@@ -168,10 +169,8 @@ function setupBattle() {
     if (currentGameMode === 'computer-vs-computer') {
         startComputerBattle();
     } else if (currentGameMode === 'player-vs-computer') {
-        // Deshabilita los botones de la computadora
         document.querySelector('#player2-container .abilities').style.display = 'none';
     } else if (currentGameMode === 'player-vs-player') {
-        // Inicia con el jugador 1 primero
         document.querySelectorAll('#player2-container .abilities button').forEach(btn => {
             btn.disabled = true;
         });
@@ -388,8 +387,38 @@ function performAttack(attacker, defender, ability, attackerId, defenderId) {
     if (defender.vida <= 0) {
         const winnerLog = document.createElement('h3');
         winnerLog.textContent = `¡${attacker.alias} gana!`;
+        document.querySelector('.game-modes').classList.remove('hidden');
         battleLog.appendChild(winnerLog);
         
         document.querySelectorAll('.abilities button').forEach(btn => btn.disabled = true);
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.menu-overlay');
+
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+  });
+  
+  overlay.addEventListener('click', function() {
+    hamburger.classList.remove('active');
+    menu.classList.remove('active');
+    this.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+});
